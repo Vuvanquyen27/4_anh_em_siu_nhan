@@ -1,0 +1,1 @@
+khi ta muốn kiểm tra phiên bản của một đối tượng thì ta sử dụng dòng thế này "đối tượng.version", nó sẽ trả về phiền bản của React mà bạn đang sử dụng
