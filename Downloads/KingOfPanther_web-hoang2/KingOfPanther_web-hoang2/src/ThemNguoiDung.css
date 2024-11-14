@@ -1,0 +1,189 @@
+/* style.css */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.form-section{
+    position: relative;
+}
+
+.form-section2{
+    position: absolute;
+    left: 220px;
+    top: 0;
+    width: 89%;
+}
+
+.form-cccd{
+    width: 89%;
+    position: absolute;
+    left: 220px;
+    top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.import-excel {
+    background-color: #2600FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.form-group-search {
+    font-size: 30px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: calc(100% - 10px);  /* Adjust for 4 columns and margins */
+    vertical-align: top;
+    margin-right: 10px; /* Add spacing between columns */
+    box-sizing: border-box;
+
+}
+.form-group-search input {
+    border-radius: 6px;
+    height: 40px;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: inline-block;
+    width: calc(25% - 10px);  /* Adjust for 4 columns and margins */
+    vertical-align: top;
+    margin-right: 10px; /* Add spacing between columns */
+    box-sizing: border-box;
+
+}
+.form-group select,
+.form-group input {
+    border-radius: 6px;
+    height: 50px;
+}
+
+
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.form-row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+.form-row:last-child .form-group:last-child {
+        margin-right: 0; /* Remove right margin from the last column */
+
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+
+.avatar-section {
+    text-align: left;
+    width: 100%;
+    align-items: center;
+}
+
+.form-group .avatar-section {
+    margin-bottom: 0;
+    border: none
+}
+
+.avatar-section img {
+    width: 120px;
+    height: 120px;
+    border: solid 1px rgb(0, 0, 0);
+    display: inline-block;
+    align-items: center;
+    border-radius: 6px;
+}
+.change-avatar {
+    display: inline-block;
+    margin-left: 10px;
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+.checkbox-group {
+  margin-bottom: 15px;
+  font-size: 22px;
+
+}
+
+.checkbox-group label {
+    display: inline-block;
+    margin-right: 20px; /* Adjust as needed */
+
+}
+
+
+.submit-button {
+    background-color: #2600FF;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+}
+
+.avatar-container {
+    width: 10%;
+    margin-bottom: 15px;
+}
+
+.avatar-section {
+    text-align: left;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}

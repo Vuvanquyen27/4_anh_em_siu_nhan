@@ -1,0 +1,249 @@
+/* ============================================ Header ============================================ */
+
+/* Chỉnh font chữ và kiểu chữ */
+.custom-header ul,
+.custom-header a {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+body{
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+height: 100vh;
+margin: 0;
+padding: 0;
+overflow: auto;
+}
+
+/* Chỉnh màu nền của header */
+.bg-custom {
+  background-color: #08326B; /* Màu nền xanh dương đậm */
+}
+
+/* Bỏ gạch chân cho các liên kết */
+.btn-link {
+  text-decoration: none !important; /* Bỏ gạch chân */
+  color: white; /* Màu chữ ban đầu */
+  transition: color 0.3s ease-in-out; /* Hiệu ứng thay đổi màu chữ */
+  position: relative; /* Để tạo hiệu ứng với gạch chân */
+}
+
+/* Chỉnh màu chữ khi hover */
+.hover:hover {
+  color: #FFD700 !important; /* Màu chữ vàng khi hover */
+}
+
+/* Hiệu ứng gạch chân từ từ khi hover */
+.btn-link::after {
+  content: '';  /* Tạo ra một phần tử mới giả */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Độ dày của gạch chân */
+  background-color: #FFD700; /* Màu của gạch chân */
+  transition: width 0.3s ease-in-out; /* Hiệu ứng thay đổi chiều rộng của gạch chân */
+}
+
+/* Khi hover vào, gạch chân sẽ từ từ hiện ra và đổi màu chữ */
+.btn-link:hover {
+  color: #FFD700 ; /* Đổi màu chữ khi hover */
+}
+
+.btn-link:hover::after {
+  width: 100%; /* Gạch chân sẽ kéo dài hết chiều dài của liên kết */
+}
+
+/* Logo bên trái */
+.logo {
+  width: 35px; /* Đặt kích thước logo */
+  height: auto;
+}
+
+/* Logo profile bên phải */
+.logo-profile {
+  width: 30px; /* Đặt kích thước logo profile */
+  height: auto;
+}
+
+/* Căn chỉnh tên người dùng */
+header .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+header .d-flex span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Căn chỉnh vị trí của logo và tên người dùng */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Căn chỉnh thông báo */
+.bell {
+  font-size: 10px;
+  transform: translate(-250%, 0%) !important;
+}
+
+/* Định dạng container của logo người dùng và tên */
+.user-profile-container {
+  position: relative; /* Để đặt menu ở vị trí phù hợp */
+  display: inline-block;
+}
+
+/* Căn chỉnh logo profile và tên người dùng */
+.user-profile-container .d-flex {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Hiển thị con trỏ khi hover */
+}
+
+
+/* Menu */
+.dropdown-menu {
+  display: none; /* Menu ẩn theo mặc định */
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9); /* Nền trắng hơi đục */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Bóng đổ để nhìn có chiều sâu hơn */
+  border-radius: 5px; /* Bo góc cho menu */
+  transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+  opacity: 0; /* Ban đầu menu sẽ trong suốt */
+  transform: translateY(15px); /* Đặt menu ở vị trí thấp hơn một chút khi ẩn */
+}
+
+/* Hiển thị menu khi hover vào container chứa logo */
+.user-profile-container:hover .dropdown-menu {
+  display: block; /* Hiển thị menu khi hover */
+  opacity: 1; /* Đảm bảo menu sẽ hiển thị rõ ràng */
+  transform: translateY(0); /* Đưa menu về vị trí ban đầu */
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 15px;
+}
+
+.dropdown-menu ul li a {
+  text-decoration: none;
+  color: black; /* Đổi màu chữ thành đen cho dễ đọc trên n���n trắng */
+  display: block;
+  width: 100%;
+}
+
+.dropdown-menu ul li a:hover {
+  color: red; /* Màu chữ khi hover */
+}
+
+/* ============================================ Footer ============================================ */
+.footer {
+  background-color: #08326B;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+/* Thêm style cho container chính */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1;
+}
+
+/* Chỉnh sửa style cho home-section */
+.home-section {
+  min-height: calc(100vh - 60px); /* Trừ đi chiều cao của header */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Đảm bảo nội dung có thể scroll */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Điều chỉnh global font size */
+* {
+    font-size: 14px; /* Giảm font size mặc định */
+}
+
+/* Header adjustments */
+.custom-header {
+    padding: 5px 10px; /* Giảm padding */
+}
+
+.custom-header .nav-link {
+    font-size: 13px;
+    padding: 5px 8px;
+}
+
+/* Footer adjustments */
+.footer {
+    padding: 10px 0; /* Giảm padding */
+    font-size: 13px;
+}
+
+/* Card adjustments */
+.card {
+    padding: 10px; /* Giảm padding */
+    margin-bottom: 10px; /* Giảm margin */
+}
+
+/* Button adjustments */
+.btn {
+    padding: 5px 10px; /* Giảm padding */
+    font-size: 13px; /* Giảm font size */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
