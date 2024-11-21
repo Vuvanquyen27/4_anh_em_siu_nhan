@@ -1,0 +1,7 @@
+docker hub là một dịch vụ lưu trữ và chía sẻ docker image. Nó là một registry (kho lưu trữ) chính thức và phổ biến nhát của docker,
+nơi bạn có thẻ tìm kiếm, lưu trữ và chia sể docker images với cộng đồng hoặc
+sử dụng trong các dự án của mình
+
+tính năng chính của docker hub:
+1. Kho lưu trữ công cộng và riêng tư
+public repositories: cho phép bạn chia sẻ docker images với mọi người trên

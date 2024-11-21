@@ -1,0 +1,19 @@
+ba cái này chính là các thuật ngữ chính trong xử lý ngôn ngữ tự nhiên
+
+1. Chunking (Phân đoạn)
+chunking là kỹ thuật trong NLP nhằm chia văn bản thành các đoạn nhỏ hơn có ý nghĩa, như cụm từ hoặc phân đoạn, mục
+đích của chunking là để tạo ra các khối văn bản dễ xủ lý và 
+phân tích hơn
+ví dụ:
+trong một câu, chunking có thể giúp tách các cụm danh từ ( noun phrases), cụm động từ 
+ứng dụng: chunking thường được sử dụng trong các hệ thống nhận dạng thực thể có tên, giúp xác định các thực thể như tến người, địa điểm, tổ chức trong văn bản
+2. parsing (phân tích cú pháp)
+parsing là quá trình phân tích cú pháp của câu để xác định cấu trúc
+cú pháp (parse tree) thể hiện mối quan hệ giữa các từ.
+ứng dụng: parsing được sử dụng trong nhiều ứng dụng NLP như dịch máy (machine transalation), tổng hợp ngữ âm văn bản(text-to-specch), và các hê thống hỏi đáp
+3. Indexing (đánh chỉ mục)
+Indexing là quá trình tạo chỉ mục cho các từ hoặc phân đoạn trong văn bản đẻ
+tăng tốc độ tìm kiếm
+ứng dụng: Indexingđược sử dụng trong các hệ thống tìm kiếm thông tin (information retrieval) quản lý dữ liệu lớn
+    
+    

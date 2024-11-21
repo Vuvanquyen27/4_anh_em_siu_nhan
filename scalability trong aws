@@ -1,0 +1,43 @@
+aws hay còn được gọi là amazon web service
+cloud computing là việc cung cấp các phần cứng, phần mềm dưới dạng internet 
+cùng với biểu tượng cloud được trừu tượng hóa
+aws là một nhà cung cấp cloud computing
+***2019 aws cung cấp service  và có hơn 1tr dpanh nghiệp
+
+**ưu điểm:
++ on-demand nghĩa là dùng theo như cầu
+chúng ta có thể dễ dàng cấp phát các tài nguyên, dễ dàng tăng và giảm tài nguyên
++uniform là dống trong đồng bộ về đồng phục, nghĩa là đồng bộ về dữ liệu này kia, gọi la có tính scability 
+scability nghĩa là tính mở rộng, trong aws là một trong những tính năng nổi bật, cho phép các hệ thống và ứng dụng có khả năng mở rộng tài nguyên
+một cách linh hoạt dựa trên nhu cầu thực tế. AWS cung cấp nhiều dịch vụ và công cụ hỗ trợ scalability, giúp tối ưu hóa hiệu suất, chi phí và khả năng đáp ứng khi lưu lượng tăng hoặc giảm.
+
+các loại scalability trong aws 
+1. mở rộng dọc
+ý nghĩa: tăng hoặc giảm tài nguyên trên một máy chủ cụ thể (ví dụ: tăng CPU, RAM hoặc dung lượng ổ đĩa).
+2.Horizontal Scaling (Mở rộng ngang):
+
+Ý nghĩa: Thêm hoặc bớt số lượng máy chủ hoặc tài nguyên để xử lý khối lượng công việc tăng/giảm.
+Ví dụ trong AWS:
+Auto Scaling Groups: AWS tự động thêm hoặc xóa EC2 instances dựa trên lưu lượng hoặc các chỉ số như CPU utilization.
+Load Balancer: Sử dụng Elastic Load Balancer (ELB) để phân phối lưu lượng đều giữa các instance.
+
+
+nên kết hợp với high availability (khsar dụng cao) để đảm bảo hệ thống luôn hoạt động ngay cả khi lưu lượng tăng đột ngột
+Ví dụ:
+Sử dụng Auto Scaling kết hợp với Multi-AZ deployment trong RDS để đảm bảo cơ sở dữ liệu luôn khả dụng.
+Sử dụng Route 53 để điều phối DNS cho các ứng dụng đa vùng (multi-region).
+
+Lợi ích của scalability trong AWS
+Chi phí tối ưu:
+
+Chỉ trả tiền cho tài nguyên bạn sử dụng (Pay-as-you-go).
+Tránh tình trạng dư thừa hoặc thiếu hụt tài nguyên.
+Hiệu suất cao:
+
+Tự động mở rộng để đảm bảo hiệu suất tối ưu khi có nhiều yêu cầu.
+Khả năng đáp ứng linh hoạt:
+
+Xử lý được cả khối lượng công việc tăng đột ngột hoặc không đều.
+Dễ quản lý:
+
+Hầu hết các giải pháp scalability của AWS đều được quản lý (managed), giảm tải cho đội ngũ kỹ thuật.
