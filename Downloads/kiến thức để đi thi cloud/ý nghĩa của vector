@@ -1,0 +1,20 @@
+độ chi tiết và khả năng phân biệt:
+Vector 300 chiều đủ lớn để nắm bắt các sắc thái ngữ nghĩa phức tạp của từ ngữ.
+
+Nó giúp mô hình có khả năng phân biệt giữa các từ có ngữ nghĩa tương tự nhưng không hoàn toàn giống nhau.
+2. độ phức tạp và tính toán:
+Vector có nhiều chiều giúp cải thiện độ chính xác của mô hình nhưng cũng yêu cầu tài nguyên tính toán cao hơn.
+
+Việc xử lý vector 300 chiều đòi hỏi nhiều bộ nhớ và thời gian xử lý hơn so với các vector có ít chiều hơn.
+
+
+Ứng dụng thực tế
+Các vector 300 chiều từ mô hình word2vec Google News có thể được sử dụng trong nhiều ứng dụng xử lý ngôn ngữ tự nhiên (NLP), như:
+
+Tìm kiếm từ tương tự: Tìm các từ có nghĩa tương tự trong ngữ cảnh.
+
+Phân loại văn bản: Sử dụng các vector từ để phân loại các đoạn văn bản.
+
+Dịch máy: Giúp cải thiện chất lượng dịch tự động.
+
+Phân tích cảm xúc: Phân tích và hiểu cảm xúc trong văn bản dựa trên các vector từ

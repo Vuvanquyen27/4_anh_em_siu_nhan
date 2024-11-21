@@ -1,0 +1,2 @@
+lambda là một hàm ẩn danh được định nghĩa mà không có tên. Trong khi các hàm bình thường sẽ được định nghĩa bằng các từ khóa def trong Python, thì các hàm ẩn danh sẽ được định nghĩa bằng từ khóa lambda.
+ Vì vậy các hàm ẩn danh còn được gọi là các Lambda Function.
