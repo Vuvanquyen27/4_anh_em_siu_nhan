@@ -1,7 +1,8 @@
 .sidebar {
   width: 280px;
   height: 100vh;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   color: #1a1a1a;
   position: fixed;
   left: 0;

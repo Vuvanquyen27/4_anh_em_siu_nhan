@@ -1,0 +1,65 @@
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  height: 80px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-item {
+  font-size: 15px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.login-btn, .register-btn {
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: transparent;
+  border: 2px solid #e31837;
+  color: #e31837;
+}
+
+.register-btn {
+  background: #e31837;
+  border: none;
+  color: white;
+} 
