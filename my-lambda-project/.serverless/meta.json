@@ -1,0 +1,73 @@
+{
+  "C:\\Users\\Admin\\Downloads\\404 Not Found\\my-lambda-project": {
+    "versionSfCore": null,
+    "versionFramework": "4.4.11",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "default-aws-credential-resolver": "<REDACTED>"
+    },
+    "composeServiceName": null,
+    "servicePath": "C:\\Users\\Admin\\Downloads\\404 Not Found\\my-lambda-project",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "openai-serverless",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs14.x",
+        "region": "us-east-1"
+      },
+      "functions": {
+        "generateText": {
+          "handler": "handler.generateText",
+          "events": [
+            {
+              "http": {
+                "path": "generate-text",
+                "method": "post"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "serviceRawFile": "service: openai-serverless\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs14.x\r\n  region: us-east-1\r\n\r\nfunctions:\r\n  generateText:\r\n    handler: handler.generateText\r\n    events:\r\n      - http:\r\n          path: generate-text\r\n          method: post\r\n",
+    "command": [
+      "create"
+    ],
+    "options": {
+      "template": "aws-nodejs",
+      "path": "my-lambda-project"
+    },
+    "error": {
+      "message": "AWS credentials missing or invalid. Original error from AWS: Could not load credentials from any providers",
+      "code": "AWS_CREDENTIALS_MISSING"
+    },
+    "params": {},
+    "machineId": "f23a19273dcf5da83880d873af724d5b",
+    "stage": "dev",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "c89b0816-07b2-47b3-8650-4961570fc403",
+    "orgName": "4anhtaicodedaoroidebug",
+    "userId": "xywlJFNNGmjXP0vFxD",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": true,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "4anhtaicodedaoroidebug",
+    "subscription": null,
+    "userEmail": "vuvanquyen2005tgdd@gmail.com",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}

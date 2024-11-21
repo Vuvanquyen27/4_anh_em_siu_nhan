@@ -1,0 +1,14 @@
+service: openai-serverless
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+
+functions:
+  generateText:
+    handler: handler.generateText
+    events:
+      - http:
+          path: generate-text
+          method: post

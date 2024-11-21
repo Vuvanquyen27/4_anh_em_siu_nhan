@@ -7,7 +7,7 @@ app.get('/api/users', (req, res) => {
     res.send('Lấy danh sách người dùng');
 });
 
-// POST
+// POST 
 app.post('/api/users', (req, res) => {
     const newUser = req.body;
     res.send(`Tạo người dùng mới: ${JSON.stringify(newUser)}`);
