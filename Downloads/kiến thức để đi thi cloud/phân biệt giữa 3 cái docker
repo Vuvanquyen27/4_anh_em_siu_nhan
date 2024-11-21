@@ -1,0 +1,22 @@
+dockerfile là một tệp văn bản chưa một tập hợp các chỉ thị (instruction) để xây dựng Docker image. nÓ như là một tập lệch kịch bản (script) chỉ dẫn cho Docker biết 
+cách tạo ra mootjimage. Trong dockerfile, bạn định nghĩa mọi thứ từu hệ điều hành
+cơ sở (base OS), các phần mềm cần cài đặT, các file cần sao chép vào image
+, cho tới các lệnh cần chạy khi container khởi động.
+
+Ví dụ:
+
+dockerfile
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y python3
+COPY . /app
+CMD ["python3", "/app/my_script.py"]
+
+2. docker image
+docker image là sản phẩm dược tạo ra từ dockerfile. Một docker image chúa tất cả các phần mềm, thư viện và file cần thiết để chạy một ứng dụng. Image giống như một bản snapshot của một hệ điều hành và các ứng dụng
+tại một thời điểm cụ thể. Bạn có thể phân phối và image và sử dung nó để khởi tạo nhiều docker container
+
+ví dụ:
+một image có thể được xây dựng từ dockerfile như trên, sau đó đẩy lên docker hub để chia sẻ
+
+
+3. 
