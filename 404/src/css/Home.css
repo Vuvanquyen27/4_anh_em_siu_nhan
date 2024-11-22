@@ -1,13 +1,13 @@
 .home-container {
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 .hero-section {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
   background: linear-gradient(135deg, rgba(255, 75, 43, 0.9) 0%, rgba(227, 24, 55, 0.9) 100%);
   color: white;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   backdrop-filter: blur(5px);
 }
 
@@ -25,9 +25,9 @@
 .features-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 25px;
   padding: 0 40px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .feature-card {
@@ -62,9 +62,9 @@
 
 .cta-section {
   background: rgba(248, 249, 250, 0.95);
-  padding: 60px 40px;
+  padding: 40px 40px;
   border-radius: 15px;
-  margin: 0 40px 40px;
+  margin: 0 40px 30px;
   backdrop-filter: blur(5px);
 }
 
@@ -119,6 +119,8 @@
   font-weight: 600;
   font-size: 1.2rem;
   transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .register-now-btn:hover {

@@ -17,15 +17,6 @@ function Sidebar() {
             <i className="fas fa-robot"></i>
             <span>Chatbot AI</span>
           </NavLink>
-          <NavLink 
-            to="/face-recognition" 
-            className={({ isActive }) => 
-              isActive ? "nav-link active" : "nav-link"
-            }
-          >
-            <i className="fas fa-camera"></i>
-            <span>Nhận diện khuôn mặt</span>
-          </NavLink>
         </nav>
       </div>
     </div>
