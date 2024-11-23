@@ -4,8 +4,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import Home from './pages/home';
-import ChatbotAI from './pages/chatbotAI';
-import FaceRecognition from './pages/FaceRecognition';
+import ImageScanner from './pages/ImageScanner';
 import './css/App.css';
 import './css/Pages.css';
 
@@ -18,8 +17,7 @@ function App() {
         <div className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/chatbot" element={<ChatbotAI />} />
-            <Route path="/face-recognition" element={<FaceRecognition />} />
+            <Route path="/image-scanner" element={<ImageScanner />} />
           </Routes>
         </div>
         <Footer />

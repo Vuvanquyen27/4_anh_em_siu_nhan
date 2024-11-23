@@ -1,3 +1,5 @@
+import '../css/FaceRecognition.css';
+
 function FaceRecognition() {
     return (
         <div>

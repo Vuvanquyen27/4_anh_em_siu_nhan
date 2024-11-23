@@ -24,9 +24,9 @@ function Footer() {
         <div className="footer-section">
           <h4>Kết nối với chúng tôi</h4>
           <div className="social-links">
-            <i className="fab fa-facebook"></i>
-            <i className="fab fa-linkedin"></i>
-            <i className="fab fa-youtube"></i>
+            <a href="https://www.facebook.com/profile.php?id=100053983899971"><i className="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/ezrisoooo/"><i className="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ezrisooooo?is_from_webapp=1&sender_device=pc"><i className="fab fa-tiktok"></i></a>
           </div>
         </div>
       </div>

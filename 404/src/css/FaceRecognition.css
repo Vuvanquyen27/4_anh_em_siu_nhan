@@ -1,0 +1,82 @@
+.face-recognition-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.face-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.face-header h1 {
+  color: #e31837;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.camera-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.camera-feed {
+  width: 100%;
+  height: 480px;
+  background: #f0f2f5;
+  border-radius: 10px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.control-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.capture-btn {
+  background: #e31837;
+  color: white;
+}
+
+.retry-btn {
+  background: #f0f2f5;
+  color: #333;
+}
+
+.result-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.loading {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.result-success {
+  color: #28a745;
+  font-size: 1.2rem;
+}
+
+.result-error {
+  color: #dc3545;
+  font-size: 1.2rem;
+} 
