@@ -1,0 +1,129 @@
+.home-container {
+  padding-top: 40px;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(255, 75, 43, 0.9) 0%, rgba(227, 24, 55, 0.9) 100%);
+  color: white;
+  margin-bottom: 30px;
+  backdrop-filter: blur(5px);
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 0 40px;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: #e31837;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.cta-section {
+  background: rgba(248, 249, 250, 0.95);
+  padding: 40px 40px;
+  border-radius: 15px;
+  margin: 0 40px 30px;
+  backdrop-filter: blur(5px);
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.benefits-list {
+  list-style: none;
+  margin-bottom: 30px;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.benefits-list li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  color: #444;
+}
+
+.benefits-list li:before {
+  content: "✓";
+  color: #e31837;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.register-now-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #e31837;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.register-now-btn:hover {
+  background: #c41230;
+  transform: scale(1.05);
+}
