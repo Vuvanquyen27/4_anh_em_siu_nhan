@@ -1,0 +1,19 @@
+:root {
+  --font-size-base: 16px;
+}
+
+@media screen and (max-width: 739px) {
+  :root {
+    --font-size-base: 14px;
+  }
+  
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  p { font-size: 1rem; }
+}
+
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.7rem; }
+  p { font-size: 1.1rem; }
+}

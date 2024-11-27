@@ -56,9 +56,7 @@ function RegistrationForm() {
       <div className="form-row">
         <div className="form-group avatar-container">
           <div className="avatar-section">
-            <img src="hackathon-removebg-preview.png"
-                alt="logo" 
-                />
+            <img alt="Logo" />
             <button type="button" className="change-avatar">ĐỔI AVATAR</button>
           </div>
           <div className="form-row">

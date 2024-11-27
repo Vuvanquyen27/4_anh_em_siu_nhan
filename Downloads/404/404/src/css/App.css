@@ -8,6 +8,8 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1a1a1a;
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .app {
@@ -15,6 +17,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Thêm background overlay */
@@ -40,6 +44,7 @@ body {
   backdrop-filter: blur(10px); /* Thêm hiệu ứng blur */
   flex: 1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 /* Responsive */
@@ -47,13 +52,18 @@ body {
   .main-content {
     margin-left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 15px;
+    margin-top: 60px; /* Thêm margin-top cho navbar */
+    margin-bottom: 80px; /* Điều chỉnh cho sidebar mobile */
+    min-height: calc(100vh - 140px); /* Điều chỉnh chiều cao */
+    overflow-x: hidden;
   }
-}
 
-/* Tối ưu hiệu suất cho background fixed trên mobile */
-@media (max-width: 768px) {
   .app::before {
     background-attachment: scroll;
+  }
+
+  .app {
+    padding-bottom: env(safe-area-inset-bottom); /* Hỗ trợ iPhone có notch */
   }
 }

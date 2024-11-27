@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "jsqr": "^1.4.0",
     "openai": "^4.72.0"
   }
 }

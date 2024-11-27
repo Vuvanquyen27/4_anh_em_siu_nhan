@@ -1,66 +1,60 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Header.css'; // Tạo file CSS riêng cho Header
 
 const Header = () => {
   return (
-    <header className="bg-custom py-3"> {/* Sử dụng lớp mới bg-custom để thay đổi màu nền */}
+    <header className="bg-custom"> {/* Bỏ py-3 để điều chỉnh trong CSS */}
       <nav className="container">
         {/* Logo bên trái */}
         <div className="d-flex align-items-center">
           <Link to="/home">
-            <img src="/assets/logo.png" alt="Logo" className="logo" />
+            <img src="/assets/logo.png" alt="Logo" className="header-logo" />
           </Link>
         </div>
-        <ul className="list-unstyled d-flex justify-content-center mb-0 custom-header">
-          <li className="mx-3">
-            <Link to="/personnel-management" className="text-white btn btn-link hover">QUẢN LÝ NHÂN SỰ</Link>
+        <ul className="list-unstyled d-flex justify-content-center mb-0 nav-links">
+          <li>
+            <Link to="/personnel-management" className="nav-link">QUẢN LÝ NHÂN SỰ</Link>
           </li>
-          <li className="mx-3">
-            <Link to="/task-management" className="text-white btn btn-link hover">QUẢN LÝ CÔNG VIỆC</Link>
+          <li>
+            <Link to="/task-management" className="nav-link">QUẢN LÝ CÔNG VIỆC</Link>
           </li>
-          <li className="mx-3">
-            <Link to="/proposal-dashboard" className="text-white btn btn-link hover">QUẢN LÝ ĐỀ XUẤT</Link>
+          <li>
+            <Link to="/proposal-dashboard" className="nav-link">QUẢN LÝ ĐỀ XUẤT</Link>
           </li>
-          <li className="mx-3">
-            <Link to="/work-schedule-management" className="text-white btn btn-link hover">QUẢN LÝ CÔNG TÁC</Link>
+          <li>
+            <Link to="/work-schedule-management" className="nav-link">QUẢN LÝ CÔNG TÁC</Link>
           </li>
         </ul>
-        <div className="d-flex align-items-center">
+        <div className="header-right">
           {/* Icon thông báo */}
-          <div className="position-relative me-3"> {/* Thêm margin phải cho khoảng cách */}
+          <div className="notification-container">
             <img 
               src="/assets/bell.png" 
               alt="Thông báo" 
-              style={{ width: '50px', height: 'auto', marginRight: '30px'}} 
+              className="notification-icon"
             />
-            {/* Giả sử có số thông báo */}
-            <span className="bell position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger" style={{ fontSize: '10px' }}>
-              5
-            </span>
+            <span className="notification-badge">5</span>
           </div>
           <div className="user-profile-container">
-            {/* Logo profile bên phải */}
-            <div className="d-flex align-items-center">
-              <img src="/assets/logo-profile.png" alt="User Profile" className="logo-profile" />
-              <span className="text-white ms-2">Admin</span>
+            <div className="user-info">
+              <img src="/assets/logo-profile.png" alt="User Profile" className="profile-icon" />
+              <span className="username">Admin</span>
             </div>
 
-            {/* Menu xổ xuống */}
             <div className="dropdown-menu">
               <ul>
-                <li><Link to="/information">Trang cá nhân</Link></li>
-                <li><a href="/home">Đổi mật khẩu</a></li>
-                <li><a href="/login" onClick={(e) => {
-                  e.preventDefault(); // Ngăn chuyển trang ngay lập tức
+                <li><Link to="/Profile">Trang cá nhân</Link></li>
+                <li><a href="/information" onClick={(e) => {
+                  e.preventDefault();
                   const confirmLogout = window.confirm("Sẽ thoát phiên làm việc này, bạn có muốn đăng xuất?");
                   if (confirmLogout) {
-                    localStorage.removeItem('user'); // Xóa thông tin người dùng
-                    window.location.href = '/login'; // Chuyển hướng về trang login
+                    localStorage.removeItem('user');
+                    window.location.href = '/login';
                   }
                 }}>Đăng xuất</a></li>
               </ul>
             </div>
-
           </div>
         </div>
       </nav>

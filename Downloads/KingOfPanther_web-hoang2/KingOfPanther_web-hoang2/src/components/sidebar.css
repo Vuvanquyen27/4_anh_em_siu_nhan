@@ -389,28 +389,6 @@ header .image-text .header-text{
     transition: all 0.3s ease;
 }
 
-/* Thêm style cho tất cả icon trong sidebar */
-.sidebar .menu-nav-link a svg,
-.sidebar .search-box svg {
-    color: white;  /* Đổi màu icon sang trắng */
-    font-size: 18px;  /* Điều chỉnh kích thước icon nếu cần */
-}
-
-/* Đảm bảo icon vẫn màu trắng khi hover */
-.sidebar .menu-nav-link a:hover svg {
-    color: white;
-}
-
-/* Điều chỉnh màu cho icon toggle */
-.sidebar .toggle.icons {
-    color: white;
-}
-
-/* Điều chỉnh màu cho icon dark mode */
-.moon-sun .icon {
-    color: white !important;
-}
-
 
 
 

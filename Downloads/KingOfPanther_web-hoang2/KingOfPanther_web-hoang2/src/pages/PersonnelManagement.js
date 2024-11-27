@@ -1,221 +1,239 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Table, Button, Input, Space, Modal, Form, Select, message } from 'antd';
+import { SearchOutlined, EditOutlined, DeleteOutlined, UserAddOutlined } from '@ant-design/icons';
+import './PersonnelManagement.css';
+
+const { Option } = Select;
 
 const PersonnelManagement = () => {
-  const [users, setUsers] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]); /* Dữ liệu đoàn viên được lấy từ API */
+  const [loading, setLoading] = useState(false); /* Trạng thái loading */
+  const [searchText, setSearchText] = useState(''); /* Text tìm kiếm */
+  const [isModalVisible, setIsModalVisible] = useState(false); /* Trạng thái modal */
+  const [form] = Form.useForm(); /* Form để thêm/sửa đoàn viên */
+  const [editingId, setEditingId] = useState(null); /* ID của đoàn viên đang được sửa */
 
-  // Dữ liệu form để thêm/sửa người dùng
-  const [formData, setFormData] = useState({
-    full_name: '',
-    email: '',
-    phone_number: '',
-    password: '',
-    role_id: '',
-    organization_level: '',
-    department_id: '',
-  });
-
-  const [editUserId, setEditUserId] = useState(null); // Track which user is being edited
-
-  // Lấy danh sách người dùng từ API
+  // Giả lập dữ liệu
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get('https://backend-hackathon-dongnai.vercel.app/api/auth', {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
-          }
-        });
-        
-        if (response.data) {
-          setUsers(response.data);
-        } else {
-          setError('Không có dữ liệu trả về từ server');
-        }
-        setLoading(false);
-      } catch (err) {
-        console.error('Chi tiết lỗi:', err);
-        setError(err.response?.data?.message || 'Lỗi khi tải dữ liệu người dùng');
-        setLoading(false);
-      }
-    };
-
-    fetchUsers();
+    setData([
+      {
+        key: '1',
+        id: 'DV001',
+        name: 'Nguyễn Văn A',
+        dateOfBirth: '1995-05-15',
+        gender: 'Nam',
+        position: 'Bí thư',
+        department: 'Chi đoàn 1',
+        phone: '0123456789',
+        email: 'nguyenvana@gmail.com',
+        status: 'Đang hoạt động'
+      },
+      // Thêm dữ liệu mẫu khác...
+    ]);
   }, []);
 
-  // Hàm thêm người dùng mới
-  const handleAddUser = async () => {
-    try {
-      const response = await axios.post('https://backend-hackathon-dongnai.vercel.app/api/auth/register', formData, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+  const columns = [
+    {
+      title: 'Mã ĐV',
+      dataIndex: 'id',
+      key: 'id',
+      width: 100,
+    },
+    {
+      title: 'Họ và tên',
+      dataIndex: 'name',
+      key: 'name',
+      filteredValue: [searchText],
+      onFilter: (value, record) => {
+        return String(record.name).toLowerCase().includes(value.toLowerCase()) ||
+               String(record.id).toLowerCase().includes(value.toLowerCase()) ||
+               String(record.department).toLowerCase().includes(value.toLowerCase());
+      }
+    },
+    {
+      title: 'Ngày sinh',
+      dataIndex: 'dateOfBirth',
+      key: 'dateOfBirth',
+      width: 120,
+    },
+    {
+      title: 'Giới tính',
+      dataIndex: 'gender',
+      key: 'gender',
+      width: 100,
+    },
+    {
+      title: 'Chức vụ',
+      dataIndex: 'position',
+      key: 'position',
+      width: 150,
+    },
+    {
+      title: 'Chi đoàn',
+      dataIndex: 'department',
+      key: 'department',
+      width: 150,
+    },
+    {
+      title: 'Số điện thoại',
+      dataIndex: 'phone',
+      key: 'phone',
+      width: 150,
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
+      width: 200,
+    },
+    {
+      title: 'Trạng thái',
+      dataIndex: 'status',
+      key: 'status',
+      width: 150,
+    },
+    {
+      title: 'Thao tác',
+      key: 'action',
+      width: 120,
+      fixed: 'right',
+      render: (_, record) => (
+        <Space size="middle">
+          <Button 
+            type="primary" 
+            icon={<EditOutlined />}
+            onClick={() => handleEdit(record)}
+          />
+          <Button 
+            type="primary" 
+            danger 
+            icon={<DeleteOutlined />}
+            onClick={() => handleDelete(record.key)}
+          />
+        </Space>
+      ),
+    },
+  ];
+
+  const handleEdit = (record) => {
+    setEditingId(record.key);
+    form.setFieldsValue(record);
+    setIsModalVisible(true);
+  };
+
+  const handleDelete = (key) => {
+    Modal.confirm({
+      title: 'Xác nhận xóa',
+      content: 'Bạn có chắc chắn muốn xóa đoàn viên này?',
+      onOk() {
+        setData(data.filter(item => item.key !== key));
+        message.success('Xóa thành công');
+      },
+    });
+  };
+
+  const handleAdd = () => {
+    setEditingId(null);
+    form.resetFields();
+    setIsModalVisible(true);
+  };
+
+  const handleModalOk = () => {
+    form.validateFields()
+      .then(values => {
+        if (editingId) {
+          setData(data.map(item => 
+            item.key === editingId ? { ...values, key: editingId } : item
+          ));
+          message.success('Cập nhật thành công');
+        } else {
+          const newKey = String(data.length + 1);
+          setData([...data, { ...values, key: newKey }]);
+          message.success('Thêm mới thành công');
         }
+        setIsModalVisible(false);
+      })
+      .catch(info => {
+        console.log('Validate Failed:', info);
       });
-      setUsers([...users, response.data.user]);
-      resetFormData();
-      alert('Thêm người dùng thành công');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Có lỗi khi thêm người dùng');
-    }
   };
-
-  // Hàm xóa người dùng
-  const handleDeleteUser = async (userId) => {
-    try {
-      await axios.delete(`https://backend-hackathon-dongnai.vercel.app/api/auth/${userId}`, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      });
-      setUsers(users.filter((user) => user.user_id !== userId));
-      alert('Xóa người dùng thành công');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Có lỗi khi xóa người dùng');
-    }
-  };
-
-  // Hàm chỉnh sửa người dùng
-  const handleEditUser = async (userId) => {
-    setEditUserId(userId);
-    const userToEdit = users.find((user) => user.user_id === userId);
-    setFormData({
-      full_name: userToEdit.full_name,
-      email: userToEdit.email,
-      phone_number: userToEdit.phone_number,
-      password: '',
-      role_id: userToEdit.role_id,
-      organization_level: userToEdit.organization_level,
-      department_id: userToEdit.department_id,
-    });
-  };
-
-  // Hàm cập nhật người dùng
-  const handleUpdateUser = async () => {
-    try {
-      const response = await axios.put(
-        `https://backend-hackathon-dongnai.vercel.app/api/auth/${editUserId}`,
-        formData,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
-          }
-        }
-      );
-      setUsers(users.map((user) => (user.user_id === editUserId ? response.data.user : user)));
-      resetFormData();
-      setEditUserId(null);
-      alert('Cập nhật người dùng thành công');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Có lỗi khi cập nhật người dùng');
-    }
-  };
-
-  // Hàm xử lý thay đổi form
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const resetFormData = () => {
-    setFormData({
-      full_name: '',
-      email: '',
-      phone_number: '',
-      password: '',
-      role_id: '',
-      organization_level: '',
-      department_id: '',
-    });
-  };
-
-  if (loading) {
-    return <p>Đang tải dữ liệu...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
 
   return (
-    <div>
-      <h1>Quản lý nhân sự</h1>
-      <form>
-        <input
-          type="text"
-          name="full_name"
-          placeholder="Tên đầy đủ"
-          value={formData.full_name}
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="phone_number"
-          placeholder="Số điện thoại"
-          value={formData.phone_number}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Mật khẩu"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="role_id"
-          placeholder="ID Vai trò"
-          value={formData.role_id}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="organization_level"
-          placeholder="Cấp độ tổ chức"
-          value={formData.organization_level}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="department_id"
-          placeholder="ID Phòng ban"
-          value={formData.department_id}
-          onChange={handleChange}
-        />
-        <button type="button" onClick={editUserId ? handleUpdateUser : handleAddUser}>
-          {editUserId ? 'Cập nhật người dùng' : 'Thêm người dùng'}
-        </button>
-      </form>
+    <div className="personnel-management">
+      <div className="personnel-header">
+        <h1>Quản Lý Đoàn Viên</h1>
+        <Space>
+          <Input
+            placeholder="Tìm kiếm theo tên, mã ĐV, chi đoàn..."
+            prefix={<SearchOutlined />}
+            onChange={e => setSearchText(e.target.value)}
+            style={{ width: 300 }}
+          />
+          <Button 
+            type="primary" 
+            icon={<UserAddOutlined />}
+            onClick={handleAdd}
+          >
+            Thêm Đoàn Viên
+          </Button>
+        </Space>
+      </div>
 
-      <h2>Danh sách nhân viên</h2>
-      <ul>
-        {users.map((user) => (
-          <li key={user.user_id || user._id}>
-            <p>Họ tên: {user.full_name}</p>
-            <p>Email: {user.email}</p>
-            <p>Số điện thoại: {user.telephone || user.phone_number}</p>
-            <p>Vai trò: {user.role_id}</p>
-            <p>Cấp độ tổ chức: {user.organization_level}</p>
-            <p>Phòng ban: {user.department_id?.name || user.department_id}</p>
-            <button onClick={() => handleEditUser(user.user_id || user._id)}>Chỉnh sửa</button>
-            <button onClick={() => handleDeleteUser(user.user_id || user._id)}>Xóa</button>
-          </li>
-        ))}
-      </ul>
+      <Table
+        columns={columns}
+        dataSource={data}
+        loading={loading}
+        scroll={{ x: 1500 }}
+        pagination={{
+          total: data.length,
+          pageSize: 10,
+          showTotal: (total) => `Tổng số ${total} đoàn viên`,
+          showSizeChanger: true,
+          showQuickJumper: true,
+        }}
+      />
+
+      <Modal
+        title={editingId ? "Sửa thông tin đoàn viên" : "Thêm đoàn viên mới"}
+        visible={isModalVisible}
+        onOk={handleModalOk}
+        onCancel={() => setIsModalVisible(false)}
+        width={800}
+      >
+        <Form
+          form={form}
+          layout="vertical"
+        >
+          <Form.Item
+            name="name"
+            label="Họ và tên"
+            rules={[{ required: true, message: 'Vui lòng nhập họ tên' }]}
+          >
+            <Input />
+          </Form.Item>
+          
+          <Form.Item
+            name="dateOfBirth"
+            label="Ngày sinh"
+            rules={[{ required: true, message: 'Vui lòng nhập ngày sinh' }]}
+          >
+            <Input type="date" />
+          </Form.Item>
+
+          <Form.Item
+            name="gender"
+            label="Giới tính"
+            rules={[{ required: true, message: 'Vui lòng chọn giới tính' }]}
+          >
+            <Select>
+              <Option value="Nam">Nam</Option>
+              <Option value="Nữ">Nữ</Option>
+            </Select>
+          </Form.Item>
+
+          {/* Thêm các trường form khác tương tự */}
+        </Form>
+      </Modal>
     </div>
   );
 };

@@ -7,7 +7,10 @@ import Home from './pages/home';
 import ImageScanner from './pages/ImageScanner';
 import './css/App.css';
 import './css/Pages.css';
-import FaceRecognition from './pages/FaceRecognition';
+import './css/grid.css';
+import './css/typography.css';
+import './css/responsive.css';
+import './css/MobileNav.css';
 
 function App() {
   return (
@@ -15,12 +18,10 @@ function App() {
       <div className="app">
         <Navbar />
         <Sidebar />
-        <FaceRecognition />
         <div className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/image-scanner" element={<ImageScanner />} />
-            <Route path="/face-auth" element={<FaceRecognition />} />
           </Routes>
         </div>
         <Footer />

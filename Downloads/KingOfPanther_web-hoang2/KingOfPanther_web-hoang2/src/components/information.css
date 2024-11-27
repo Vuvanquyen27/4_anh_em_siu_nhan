@@ -27,15 +27,10 @@
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    margin: 0;
     border: 4px solid #08326B;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    padding: 5px;
-}
-
-.avatar-section img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+    background-size: cover;
 }
 
 .change-avatar {
