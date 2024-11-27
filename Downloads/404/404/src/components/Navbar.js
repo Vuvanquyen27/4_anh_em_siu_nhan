@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link to="/contact" className="nav-item">Tài khoản người dùng</Link>
         </div>
 
-        <div className="nav-buttons">
+        <div class="auth-buttons">
           <button className="login-btn">Đăng nhập</button>
           <button className="register-btn">Đăng ký</button>
         </div>
