@@ -30,6 +30,11 @@
   .feature-card h3 {
     font-size: 16px;
     margin-bottom: 8px;
+    transition: color 0.3s;
+  }
+
+  .feature-card h3:hover {
+    color: #e31837;
   }
 
   .feature-card p {
@@ -76,6 +81,7 @@
   font-size: 28px;
   color: #4A90E2;
   margin-bottom: 20px;
+  margin-top: 100px;
 }
 
 .card {
@@ -95,4 +101,8 @@
   border-radius: 8px;
   padding: 10px;
   margin-top: 10px;
+}
+
+.dashboard {
+  margin-top: 80px;
 }

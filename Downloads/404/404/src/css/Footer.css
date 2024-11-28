@@ -2,7 +2,7 @@
   background: rgba(26, 26, 26, 0.95);
   backdrop-filter: blur(10px);
   color: white;
-  padding: 40px 0 20px;
+  padding: 20px 0 10px;
   margin-top: auto; /* Đẩy footer xuống cuối */
   width: 100%;
 }
@@ -55,8 +55,8 @@
 
 .footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  margin-top: 40px;
+  padding-top: 10px;
+  margin-top: 20px;
   border-top: 1px solid #333;
 }
 

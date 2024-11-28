@@ -18,7 +18,7 @@ import './css/grid.css';
 import './css/typography.css';
 import './css/responsive.css';
 import './css/MobileNav.css';
-
+import Introduction from './pages/Introduction';
 function App() {
   return (
     <Router>
@@ -27,6 +27,7 @@ function App() {
         <Sidebar />
         <div className="main-content">
           <Routes>
+            <Route path='/introduction' element={<Introduction />}></Route>
             <Route path="/home" element={<Home />} />
             <Route path="/account" element={<Account />} />
             <Route path="/transaction" element={<Transaction />} />

@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import '../css/Forecast.css';
 
 // Đăng ký các components cần thiết
 Chart.register(
