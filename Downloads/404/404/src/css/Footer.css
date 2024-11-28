@@ -1,9 +1,9 @@
 .footer {
   background: rgba(26, 26, 26, 0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   color: white;
-  padding: 20px 0 10px;
-  margin-top: auto; /* Đẩy footer xuống cuối */
+  padding: 40px 0;
+  margin-top: auto;
   width: 100%;
 }
 
@@ -17,9 +17,10 @@
 }
 
 .footer-section h4 {
-  color: #e31837;
+  color: #ff6f61;
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 .footer-section ul {
@@ -31,11 +32,12 @@
   margin-bottom: 10px;
   color: #ccc;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .footer-section ul li:hover {
-  color: #e31837;
+  color: #ff6f61;
+  text-decoration: underline;
 }
 
 .social-links {

@@ -1,8 +1,8 @@
 .navbar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
   height: 80px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 100%;
   position: fixed;
   top: 0px;
@@ -38,10 +38,16 @@
 }
 
 .nav-item {
-  font-size: 15px;
+  font-size: 18px;
   color: #333;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: #ff6f61;
+  text-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
 }
 
 .auth-buttons {
