@@ -27,7 +27,7 @@ function App() {
         <Sidebar />
         <div className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/account" element={<Account />} />
             <Route path="/transaction" element={<Transaction />} />
             <Route path="/forecast" element={<Forecast />} />

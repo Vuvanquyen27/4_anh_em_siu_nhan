@@ -11,13 +11,13 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo">
-          <Link to="/home">
+          <Link to="">
             <img src="logo.jpg" alt="HDBank Logo" />
           </Link>
         </div>
         
         <div className="nav-menu">
-          <Link to="" className="nav-item">Trang chủ</Link>
+          <Link to="/home" className="nav-item">Trang chủ</Link>
           <Link to="/account" className="nav-item">Tài khoản</Link>
           <Link to="/transaction" className="nav-item">Giao dịch</Link>
           <Link to="/forecast" className="nav-item">Dự báo dòng tiền</Link>

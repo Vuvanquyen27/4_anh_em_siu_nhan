@@ -40,30 +40,47 @@ function Forecast() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { income, expenses, months } = forecastData;
-    
+
+    const incomeData = [];
+    const expensesData = [];
+    const balanceData = [];
+
+    let currentIncome = parseFloat(income) || 0;
+    let currentExpenses = parseFloat(expenses) || 0;
+
+    for (let i = 0; i < parseInt(months); i++) {
+        // Tăng cường biến động ngẫu nhiên
+        currentIncome += (Math.random() * 200 - 100); // Biến động ngẫu nhiên cho thu nhập
+        currentExpenses += (Math.random() * 100 - 50); // Biến động ngẫu nhiên cho chi tiêu
+
+        incomeData.push(currentIncome);
+        expensesData.push(currentExpenses);
+        balanceData.push(currentIncome - currentExpenses);
+    }
+
     const data = {
       labels: Array.from({length: parseInt(months)}, (_, i) => `Tháng ${i + 1}`),
       datasets: [
         {
           label: 'Thu nhập',
-          data: Array(parseInt(months)).fill(parseFloat(income) || 0),
+          data: incomeData,
           borderColor: 'rgb(75, 192, 192)',
           backgroundColor: 'rgba(75, 192, 192, 0.5)',
-          tension: 0.1
+          tension: 0.3
         },
         {
           label: 'Chi tiêu',
-          data: Array(parseInt(months)).fill(parseFloat(expenses) || 0),
+          data: expensesData,
           borderColor: 'rgb(255, 99, 132)',
           backgroundColor: 'rgba(255, 99, 132, 0.5)',
-          tension: 0.1
+          tension: 0.3
         },
         {
           label: 'Số dư',
-          data: Array(parseInt(months)).fill((parseFloat(income) || 0) - (parseFloat(expenses) || 0)),
+          data: balanceData,
           borderColor: 'rgb(54, 162, 235)',
           backgroundColor: 'rgba(54, 162, 235, 0.5)',
-          tension: 0.1
+          tension: 0.3
         }
       ]
     };

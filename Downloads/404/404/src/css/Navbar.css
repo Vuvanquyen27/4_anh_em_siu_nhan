@@ -114,6 +114,7 @@
   max-width: 400px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.3s ease;
+  position: relative;
 }
 
 .form-container h2 {
