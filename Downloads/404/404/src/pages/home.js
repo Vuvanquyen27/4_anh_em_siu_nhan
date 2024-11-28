@@ -1,58 +1,55 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
-import { Link, useNavigate } from 'react-router-dom';
 import '../css/Home.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRobot, faShieldAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
-  const navigate = useNavigate();
-
-  const handleRegisterClick = () => {
-    navigate('/register');
-  };
-
   return (
-    <div className="home-container">
-      <div className="hero-section">
-        <h1>Chuyển đổi số cùng HDBank</h1>
-        <p className="subtitle">Trải nghiệm ngân hàng thông minh với công nghệ AI tiên tiến</p>
-      </div>
-
-      <div className="features-section">
-        <div className="feature-card">
-          <FontAwesomeIcon icon={faRobot} />
-          <h3>AI Chatbot Thông Minh</h3>
-          <p>Hỗ trợ 24/7 với trợ lý ảo được đào tạo chuyên sâu</p>
+    <div className="dashboard">
+      <h1>Bảng Điều Khiển Tổng Quan</h1>
+      
+      <div className="overview-cards">
+        <div className="card">
+          <h2>Số Dư Tài Khoản</h2>
+          <p id="account-balance">50,000,000 VND</p>
         </div>
-        <div className="feature-card">
-          <FontAwesomeIcon icon={faShieldAlt} />
-          <h3>Bảo Mật Sinh Trắc Học</h3>
-          <p>Xác thực khuôn mặt an toàn, bảo mật tuyệt đối.</p>
+        <div className="card">
+          <h2>Tổng Thu Nhập</h2>
+          <p id="total-income">75,000,000 VND</p>
         </div>
-        <div className="feature-card">
-          <FontAwesomeIcon icon={faClock} />
-          <h3>Giao Dịch Nhanh Chóng</h3>
-          <p>Xử lý giao dịch tức thì, tiết kiệm thời gian.</p>
+        <div className="card">
+          <h2>Tổng Chi Tiêu</h2>
+          <p id="total-expenses">25,000,000 VND</p>
         </div>
       </div>
 
-      <div className="cta-section">
-        <div className="cta-content">
-          <h2>Bắt đầu ngay hôm nay</h2>
-          <p>Đăng ký để trải nghiệm các tính năng tuyệt vời của chúng tôi</p>
-          <ul className="benefits-list">
-            <li>Miễn phí duy trì tài khoản trong 2 năm đầu.</li>
-            <li>Hoàn tiền 2% cho mọi giao dịch online.</li>
-            <li>Tặng ngay 100.000 VND khi đăng ký thành công.</li>
-            <li>Đặc biệt, chúng tôi hỗ trợ tạo tài khoản chỉ với 2 bước đơn giản.</li>
-          </ul>
-          <button 
-            className="register-now-btn"
-            onClick={handleRegisterClick}
-          >
-            Đăng ký ngay
-          </button>
+      <div className="cash-flow-chart">
+        <h2>Biểu Đồ Dòng Tiền</h2>
+        <div id="cash-flow-chart-container">
+          {/* Đây là nơi bạn sẽ thêm biểu đồ dòng tiền bằng JavaScript */}
+        </div>
+      </div>
+
+      <div className="charts-and-graphs">
+        <h2>Biểu Đồ và Đồ Thị</h2>
+        
+        <div className="chart">
+          <h3>Xu Hướng Dòng Tiền</h3>
+          <div id="cash-flow-trend-chart">
+            {/* Đây là nơi bạn sẽ thêm biểu đồ xu hướng dòng tiền */}
+          </div>
+        </div>
+
+        <div className="chart">
+          <h3>Thu Chi Theo Thời Gian</h3>
+          <div id="income-expense-time-chart">
+            {/* Đây là nơi bạn sẽ thêm biểu đồ thu chi theo thời gian */}
+          </div>
+        </div>
+
+        <div className="chart">
+          <h3>Phân Loại Chi Tiêu</h3>
+          <div id="expense-category-chart">
+            {/* Đây là nơi bạn sẽ thêm biểu đồ phân loại chi tiêu */}
+          </div>
         </div>
       </div>
     </div>

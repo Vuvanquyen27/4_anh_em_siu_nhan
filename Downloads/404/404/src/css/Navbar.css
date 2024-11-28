@@ -41,7 +41,7 @@
   font-weight: 500;
 }
 
-.nav-buttons {
+.auth-buttons {
   display: flex;
   gap: 15px;
 }
@@ -69,18 +69,19 @@
 @media (max-width: 768px) {
   .navbar {
     width: 100%;
-    height: 60px;
+    height: 45px;
     padding: 0;
   }
 
   .navbar-container {
     width: 100%;
-    padding: 0 15px;
+    padding: 0 10px;
     position: relative;
   }
 
   .logo {
-    height: 30px;
+    height: 25px;
+    margin-left: 5px;
   }
 
   .nav-buttons {
@@ -89,5 +90,265 @@
 
   .nav-menu {
     display: none;
+  }
+}
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+.form-container h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form-container input:focus {
+  border-color: #e31837;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(227, 24, 55, 0.1);
+}
+
+.form-container button[type="submit"] {
+  background: #e31837;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.form-container button[type="submit"]:hover {
+  background: #c41230;
+  transform: translateY(-2px);
+}
+
+.close-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #f1f1f1;
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #e4e4e4;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive cho Form */
+@media (max-width: 768px) {
+  .form-overlay {
+    padding: 0;
+  }
+
+  .form-container {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+    padding: 12px;
+    margin-top: 50px;
+  }
+
+  .form-container h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-container input {
+    padding: 8px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  .form-container button[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin-top: 10px;
+    background: #e31837;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  .close-btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin-top: 10px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    color: #333;
+  }
+
+  @media (max-height: 600px) {
+    .form-overlay {
+      padding-top: 20px;
+    }
+    
+    .form-container {
+      max-height: 95vh;
+      padding: 15px;
+    }
+  }
+}
+
+/* Thêm styles cho mobile nav auth buttons */
+.mobile-auth-buttons {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+  }
+
+  .mobile-auth-buttons button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .mobile-login-btn {
+    background: transparent;
+    border: 2px solid #e31837;
+    color: #e31837;
+  }
+
+  .mobile-register-btn {
+    background: #e31837;
+    border: none;
+    color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .nav-menu, .auth-buttons {
+    display: none;
+  }
+
+  .form-overlay {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .form-container {
+    width: 100%;
+    height: 100vh;
+    max-width: none;
+    border-radius: 0;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .form-container input {
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .form-container button[type="submit"],
+  .close-btn {
+    padding: 18px;
+    font-size: 18px;
+    margin-top: 20px;
   }
 } 

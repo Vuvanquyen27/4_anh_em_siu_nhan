@@ -52,9 +52,9 @@ body {
   .main-content {
     margin-left: 0;
     width: 100%;
-    padding: 15px;
-    margin-top: 60px; /* Thêm margin-top cho navbar */
-    margin-bottom: 80px; /* Điều chỉnh cho sidebar mobile */
+    padding: 8px;
+    margin-top: 45px; /* Theo navbar height mới */
+    margin-bottom: 45px;
     min-height: calc(100vh - 140px); /* Điều chỉnh chiều cao */
     overflow-x: hidden;
   }
@@ -65,5 +65,9 @@ body {
 
   .app {
     padding-bottom: env(safe-area-inset-bottom); /* Hỗ trợ iPhone có notch */
+  }
+
+  body {
+    font-size: 12px;
   }
 }

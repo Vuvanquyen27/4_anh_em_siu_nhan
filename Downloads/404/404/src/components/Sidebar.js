@@ -37,6 +37,7 @@ function Sidebar() {
             <i className="fas fa-user-shield"></i>
             <span>Xác thực khuôn mặt</span>
           </NavLink>
+
         </nav>
       </div>
     </div>

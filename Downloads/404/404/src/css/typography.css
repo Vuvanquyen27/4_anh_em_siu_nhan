@@ -4,12 +4,12 @@
 
 @media screen and (max-width: 739px) {
   :root {
-    --font-size-base: 14px;
+    --font-size-base: 12px;
   }
   
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.5rem; }
-  p { font-size: 1rem; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+  p { font-size: 0.9rem; }
 }
 
 @media screen and (min-width: 740px) and (max-width: 1023px) {

@@ -14,7 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import '../css/MobileNav.css';
 
-function MobileNav() {
+function MobileNav({ onShowLogin, onShowRegister }) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -44,7 +44,7 @@ function MobileNav() {
       </button>
 
       {isOpen && (
-        <div className="mobile-menu">
+        <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
           <Link to="/" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
             <FontAwesomeIcon icon={faHome} className="nav-icon" />
             Trang chủ
@@ -53,7 +53,7 @@ function MobileNav() {
             <FontAwesomeIcon icon={faUser} className="nav-icon" />
             Tài khoản
           </Link>
-          <Link to="/transactions" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
+          <Link to="/transaction" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
             <FontAwesomeIcon icon={faExchangeAlt} className="nav-icon" />
             Giao dịch
           </Link>
@@ -73,6 +73,27 @@ function MobileNav() {
             <FontAwesomeIcon icon={faHeadset} className="nav-icon" />
             Hỗ trợ
           </Link>
+          
+          <div className="mobile-auth-buttons">
+            <button 
+              className="mobile-login-btn"
+              onClick={() => {
+                setIsOpen(false);
+                onShowLogin();
+              }}
+            >
+              Đăng nhập
+            </button>
+            <button 
+              className="mobile-register-btn"
+              onClick={() => {
+                setIsOpen(false);
+                onShowRegister();
+              }}
+            >
+              Đăng ký
+            </button>
+          </div>
         </div>
       )}
     </div>
