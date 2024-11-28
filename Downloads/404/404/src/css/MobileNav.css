@@ -10,7 +10,13 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 1100;
-    width: 30%;
+    width: 40%;
+  .mobile-menu-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-50%);
+  }
   }
 
   .mobile-menu-btn {
@@ -25,6 +31,7 @@
     justify-content: center;
     width: 25px;
     height: 25px;
+    margin-right: 5px;
   }
 
   .mobile-menu {
