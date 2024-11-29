@@ -35,7 +35,7 @@ function Support() {
 
   return (
     <div className="support-page">
-      <h1>Trung tâm Hỗ trợ</h1>
+      <h1 style={{ textAlign: 'center', color: '#e31837' }}>Trung tâm Hỗ trợ</h1>
       
       <div className="support-tabs">
         <button 

@@ -1,103 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faBars, 
-  faTimes, 
-  faHome,
-  faUser,
-  faExchangeAlt,
-  faChartLine,
-  faCreditCard,
-  faFileAlt,
-  faHeadset 
-} from '@fortawesome/free-solid-svg-icons';
-import '../css/MobileNav.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-function MobileNav({ onShowLogin, onShowRegister }) {
+const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <div className="mobile-nav">
-      <button 
-        className="mobile-menu-btn"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? "Đóng menu" : "Mở menu"}
-      >
-        <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+    <div className="mobile-nav-container">
+      <button className="mobile-menu-btn" onClick={toggleMenu}>
+        {isOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      {isOpen && (
-        <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
-          <Link to="/" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
-            <FontAwesomeIcon icon={faHome} className="nav-icon" />
+      <div className={`mobile-nav ${isOpen ? 'active' : ''}`}>
+        <div className="mobile-nav-items">
+          <Link to="/" className="mobile-nav-item" onClick={toggleMenu}>
             Trang chủ
           </Link>
-          <Link to="/account" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
-            <FontAwesomeIcon icon={faUser} className="nav-icon" />
+          <Link to="/account" className="mobile-nav-item" onClick={toggleMenu}>
             Tài khoản
           </Link>
-          <Link to="/transaction" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
-            <FontAwesomeIcon icon={faExchangeAlt} className="nav-icon" />
+          <Link to="/transaction" className="mobile-nav-item" onClick={toggleMenu}>
             Giao dịch
           </Link>
-          <Link to="/forecast" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
-            <FontAwesomeIcon icon={faChartLine} className="nav-icon" />
+          <Link to="/forecast" className="mobile-nav-item" onClick={toggleMenu}>
             Dự báo dòng tiền
           </Link>
-          <Link to="/credit" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
-            <FontAwesomeIcon icon={faCreditCard} className="nav-icon" />
+          <Link to="/credit-analysis" className="mobile-nav-item" onClick={toggleMenu}>
             Phân tích tín dụng
           </Link>
-          <Link to="/reports" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
-            <FontAwesomeIcon icon={faFileAlt} className="nav-icon" />
+          <Link to="/report" className="mobile-nav-item" onClick={toggleMenu}>
             Báo cáo
           </Link>
-          <Link to="/support" className="mobile-nav-item" onClick={() => setIsOpen(false)}>
-            <FontAwesomeIcon icon={faHeadset} className="nav-icon" />
+          <Link to="/support" className="mobile-nav-item" onClick={toggleMenu}>
             Hỗ trợ
           </Link>
-          
-          <div className="mobile-auth-buttons">
-            <button 
-              className="mobile-login-btn"
-              onClick={() => {
-                setIsOpen(false);
-                onShowLogin();
-              }}
-            >
-              Đăng nhập
-            </button>
-            <button 
-              className="mobile-register-btn"
-              onClick={() => {
-                setIsOpen(false);
-                onShowRegister();
-              }}
-            >
-              Đăng ký
-            </button>
-          </div>
+          <Link to="/user-account" className="mobile-nav-item" onClick={toggleMenu}>
+            Tài khoản người dùng
+          </Link>
         </div>
-      )}
+      </div>
     </div>
   );
-}
+};
 
 export default MobileNav; 

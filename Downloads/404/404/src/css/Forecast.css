@@ -1,30 +1,58 @@
 .forecast-page {
     padding: 20px;
     margin-top: 80px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   
   .forecast-form, .forecast-chart {
     margin-bottom: 30px;
   }
   
+  .forecast-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
   .forecast-form form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   .forecast-form input, .forecast-form select, .forecast-form button {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #eee;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .forecast-form input:focus, .forecast-form select:focus {
+    border-color: #e31837;
+    outline: none;
+    box-shadow: 0 0 5px rgba(227, 24, 55, 0.3);
   }
   
   .forecast-form button {
+    padding: 12px 25px;
+    border-radius: 8px;
     background-color: #e31837;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
   }
   
   .forecast-form button:hover {
@@ -32,20 +60,60 @@
   }
   
   .forecast-chart {
-    max-width: 800px;
-    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
   }
   
   @media (max-width: 768px) {
     .forecast-page {
       padding: 10px;
+      margin-top: 60px;
     }
   
     .forecast-form form {
-      max-width: 100%;
+      width: 100%;
+    }
+  
+    .forecast-form input,
+    .forecast-form select,
+    .forecast-form button {
+      font-size: 16px;
+      padding: 10px;
     }
   
     .forecast-chart {
-      max-width: 100%;
+      height: 300px;
+    }
+  
+    .chart-container {
+      height: 250px;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .forecast-page {
+      padding: 30px;
+      margin-top: 100px;
+    }
+  
+    .forecast-form form {
+      max-width: 400px;
+    }
+  
+    .forecast-form input, 
+    .forecast-form select, 
+    .forecast-form button {
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+  
+    .forecast-chart {
+      max-width: 1000px;
     }
   }

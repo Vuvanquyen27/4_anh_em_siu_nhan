@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import Home from './pages/home';
 import Account from './pages/AccountFinance';
@@ -12,36 +11,53 @@ import CreditAnalysis from './pages/CreditAnalysis';
 import Report from './pages/Report';
 import Support from './pages/Support';
 import UserAccount from './pages/UserAccount';
-import './css/App.css';
-import './css/Pages.css';
-import './css/grid.css';
-import './css/typography.css';
-import './css/responsive.css';
-import './css/MobileNav.css';
+import Login from './pages/Login';
 import Introduction from './pages/Introduction';
+import PrivateRoute from './components/PrivateRoute';
+import { AuthProvider } from './context/AuthContext';
+import ChatBot from './components/ChatBot';
+
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Navbar />
-        <Sidebar />
-        <div className="main-content">
+    <div className="app-wrapper">
+      <AuthProvider>
+        <Router>
           <Routes>
-            <Route path='/introduction' element={<Introduction />}></Route>
-            <Route path="/home" element={<Home />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/transaction" element={<Transaction />} />
-            <Route path="/forecast" element={<Forecast />} />
-            <Route path="/image-scanner" element={<ImageScanner />} />
-            <Route path="/credit-analysis" element={<CreditAnalysis />} />
-            <Route path="/report" element={<Report />} />
-            <Route path="/support" element={<Support />} />
-            <Route path="/user-account" element={<UserAccount />} />
+            {/* Public Routes */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/introduction" element={<Introduction />} />
+            
+            {/* Protected Routes */}
+            <Route element={<PrivateRoute><Layout /></PrivateRoute>}>
+              <Route path="/" element={<Home />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/transaction" element={<Transaction />} />
+              <Route path="/forecast" element={<Forecast />} />
+              <Route path="/image-scanner" element={<ImageScanner />} />
+              <Route path="/credit-analysis" element={<CreditAnalysis />} />
+              <Route path="/report" element={<Report />} />
+              <Route path="/support" element={<Support />} />
+              <Route path="/user-account" element={<UserAccount />} />
+            </Route>
           </Routes>
-        </div>
-        <Footer />
+          <ChatBot />
+        </Router>
+      </AuthProvider>
+    </div>
+  );
+}
+
+// Tạo component Layout riêng
+function Layout() {
+  return (
+    <div className="app">
+      <div className="app-background"></div>
+      <Navbar />
+      <div className="main-content">
+        <Outlet />
       </div>
-    </Router>
+      <Footer />
+    </div>
   );
 }
 

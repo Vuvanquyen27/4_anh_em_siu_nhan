@@ -13,12 +13,13 @@
 
 .logout-btn {
   padding: 10px 20px;
-  background-color: #f0f0f0;
+  background-color: #e31837;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s;
+  font-size: 20px;
 }
 
 .logout-btn:hover {

@@ -1,61 +1,155 @@
 .transaction-page {
-    padding: 20px;
+    padding: 30px;
     margin-top: 80px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .create-transaction, .transaction-history {
     margin-bottom: 30px;
   }
   
+  .create-transaction {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  
+  .create-transaction:hover {
+    transform: translateY(-5px);
+  }
+  
   .create-transaction form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    
   }
   
   .create-transaction input, .create-transaction select, .create-transaction button {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    padding: 12px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .create-transaction input:focus, .create-transaction select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
   }
   
   .create-transaction button {
-    background-color: #e31837;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    border-radius: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
   }
   
   .create-transaction button:hover {
-    background-color: #c41230;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+  }
+  
+  .transaction-history {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
   }
   
   .transaction-history table {
     width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .transaction-history th, .transaction-history td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    border-collapse: separate;
+    border-spacing: 0;
   }
   
   .transaction-history th {
-    background-color: #f2f2f2;
+    background: #f8f9fa;
+    padding: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 30px;
+  }
+  
+  .transaction-history td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 30;
+  }
+  
+  .transaction-history tr:hover {
+    background: #f8f9fa;
   }
   
   @media (max-width: 768px) {
     .transaction-page {
       padding: 10px;
+      margin-top: 60px;
     }
   
     .create-transaction form {
-      max-width: 100%;
+      grid-template-columns: 1fr;
+    }
+  
+    .create-transaction input,
+    .create-transaction select,
+    .create-transaction button {
+      font-size: 16px;
+      padding: 10px;
     }
   
     .transaction-history {
       overflow-x: auto;
+    }
+  
+    .transaction-history table {
+      font-size: 14px;
+    }
+  
+    .transaction-history th,
+    .transaction-history td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .transaction-page {
+      padding: 40px;
+      margin-top: 100px;
+    }
+  
+    .create-transaction {
+      padding: 35px;
+    }
+  
+    .create-transaction input, 
+    .create-transaction select, 
+    .create-transaction button {
+      padding: 15px;
+      font-size: 16px;
+    }
+  
+    .transaction-history th {
+      padding: 20px;
+      font-size: 18px;
+    }
+  
+    .transaction-history td {
+      padding: 20px;
+      font-size: 16px;
     }
   }

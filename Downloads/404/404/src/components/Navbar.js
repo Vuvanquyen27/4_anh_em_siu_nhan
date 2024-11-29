@@ -2,22 +2,29 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MobileNav from './MobileNav';
 import '../css/Navbar.css';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo">
-          <Link to="/introduction">
-            <img src="logo.jpg" alt="HDBank Logo" />
+          <Link to="/">
+            <img src="/logo.jpg" alt="HDBank Logo" />
           </Link>
         </div>
         
         <div className="nav-menu">
-          <Link to="/home" className="nav-item">Trang chủ</Link>
+          <Link to="/" className="nav-item">Trang chủ</Link>
           <Link to="/account" className="nav-item">Tài khoản</Link>
           <Link to="/transaction" className="nav-item">Giao dịch</Link>
           <Link to="/forecast" className="nav-item">Dự báo dòng tiền</Link>
@@ -28,46 +35,14 @@ const Navbar = () => {
         </div>
 
         <div className="auth-buttons">
-          <button className="login-btn" onClick={() => setShowLoginForm(true)}>Đăng nhập</button>
-          <button className="register-btn" onClick={() => setShowRegisterForm(true)}>Đăng ký</button>
+          <button className="logout-btn" onClick={handleLogout}>
+            <i className="fas fa-sign-out-alt"></i>
+            <span>Đăng xuất</span>
+          </button>
         </div>
 
-        <MobileNav 
-          onShowLogin={() => setShowLoginForm(true)}
-          onShowRegister={() => setShowRegisterForm(true)}
-        />
+        <MobileNav />
       </div>
-
-      {showLoginForm && (
-        <div className="form-overlay">
-          <div className="form-container">
-            <h2>Đăng nhập</h2>
-            <form>
-              <input type="text" placeholder="Tên đăng nhập" required />
-              <input type="password" placeholder="Mật khẩu" required />
-              <button type="submit">Đăng nhập</button>
-            </form>
-            <button className="close-btn" onClick={() => setShowLoginForm(false)}>Đóng</button>
-          </div>
-        </div>
-      )}
-
-      {showRegisterForm && (
-        <div className="form-overlay">
-          <div className="form-container">
-            <h2>Đăng ký</h2>
-            <form>
-              <input type="text" placeholder="Họ và tên" required />
-              <input type="email" placeholder="Email" required />
-              <input type="text" placeholder="Tên đăng nhập" required />
-              <input type="password" placeholder="Mật khẩu" required />
-              <input type="password" placeholder="Xác nhận mật khẩu" required />
-              <button type="submit">Đăng ký</button>
-            </form>
-            <button className="close-btn" onClick={() => setShowRegisterForm(false)}>Đóng</button>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };

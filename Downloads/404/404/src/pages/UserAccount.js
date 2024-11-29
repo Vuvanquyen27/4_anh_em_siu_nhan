@@ -30,15 +30,16 @@ function UserAccount() {
   };
   
   return (
-    <div className="user-account-page">
+
+
+      <div className="account-content">
+            <div className="user-account-page">
       <div className="account-header">
         <h1>Tài Khoản Người Dùng</h1>
         <button className="logout-btn" onClick={handleLogout}>
           Đăng xuất
         </button>
       </div>
-
-      <div className="account-content">
         {!isEditing ? (
           <div className="info-display">
             <div className="info-group">
