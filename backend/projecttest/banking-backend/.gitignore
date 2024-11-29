@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+.CFUserTextEncoding
+.Trash/
+.vscode/
+.npm/
+.ssh/
+node_modules/
+
+# Personal directories
+Desktop/
+Documents/
+Downloads/
+Pictures/
+Music/
+Movies/
+Public/
+Applications/
+Library/
+
+# Project specific
+.env
+package-lock.json
