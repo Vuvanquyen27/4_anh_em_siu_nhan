@@ -1,0 +1,94 @@
+.forecast-page {
+    padding: 40px;
+    margin-top: 100px;
+
+  }
+  
+  .forecast-form, .forecast-chart {
+    margin-bottom: 80px;
+  }
+  
+  .forecast-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 800px;
+  }
+  
+  .forecast-form input, .forecast-form select, .forecast-form button {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .forecast-form button {
+    background-color: #e31837;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 15px;
+  }
+  
+  .forecast-form button:hover {
+    background-color: #c41230;
+  }
+  
+  .forecast-chart {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  .chart-container {
+    height: 600px;
+  }
+  
+  @media (max-width: 768px) {
+    .forecast-page {
+      padding: 10px;
+      margin-top: 50px;
+    }
+  
+    .forecast-form form {
+      max-width: 100%;
+    }
+  
+    .forecast-chart {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    .forecast-form input, 
+    .forecast-form select, 
+    .forecast-form button {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    h2 {
+      font-size: 16px;
+    }
+  
+    .chart-container {
+      height: 300px;
+    }
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }

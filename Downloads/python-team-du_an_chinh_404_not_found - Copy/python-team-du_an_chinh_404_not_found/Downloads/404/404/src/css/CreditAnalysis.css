@@ -1,0 +1,129 @@
+.credit-analysis-page {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.credit-form {
+  width: 100%;
+  margin: 40px 0;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 35px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.credit-form button {
+  background-color: #e31837;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.credit-form button:hover {
+  background-color: #c41230;
+}
+
+.credit-report {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.score-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.credit-score {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e31837;
+  margin: 20px 0;
+}
+
+.credit-rating {
+  font-size: 24px;
+  color: #333;
+}
+
+.analysis-section {
+  margin-bottom: 30px;
+}
+
+.analysis-section ul,
+.recommendations ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.analysis-section li,
+.recommendations li {
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.recommendations {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .credit-analysis-page {
+    padding: 5px;
+  }
+  
+  .credit-form {
+    padding: 10px;
+  }
+  
+  .credit-report {
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  .score-section {
+    padding: 10px;
+  }
+  
+  .credit-score {
+    font-size: 48px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+  }
+  
+  .credit-form button {
+    font-size: 16px;
+  }
+} 

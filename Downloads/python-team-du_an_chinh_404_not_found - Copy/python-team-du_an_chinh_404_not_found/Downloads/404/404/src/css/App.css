@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Thêm background overlay */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.9) contrast(1.1);
+  z-index: -1;
+}
+
+.main-content {
+  margin-left: 280px;
+  padding: 30px;
+  width: calc(100% - 280px);
+  background: var(--background);
+  backdrop-filter: blur(10px); /* Thêm hiệu ứng blur */
+  flex: 1;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 8px;
+    margin-top: 45px; /* Theo navbar height mới */
+    margin-bottom: 45px;
+    min-height: calc(100vh - 140px); /* Điều chỉnh chiều cao */
+    overflow-x: hidden;
+  }
+
+  .app::before {
+    background-attachment: scroll;
+  }
+
+  .app {
+    padding-bottom: env(safe-area-inset-bottom); /* Hỗ trợ iPhone có notch */
+  }
+
+  body {
+    font-size: 12px;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s, box-shadow 0.2s;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s;
+  padding: 12px 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Thêm các biến CSS toàn cục */
+:root {
+  --primary: #e31837;
+  --primary-light: #ff4d6a;
+  --primary-dark: #c41230;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --background: #f8f9fa;
+  --surface: #ffffff;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}

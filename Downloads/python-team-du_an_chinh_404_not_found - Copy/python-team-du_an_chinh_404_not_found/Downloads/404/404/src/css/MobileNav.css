@@ -1,0 +1,90 @@
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+    width: 30%;
+  }
+
+  .mobile-menu-btn {
+    background: transparent;
+    border: none;
+    padding: 3px;
+    font-size: 16px;
+    color: #e31837;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 45px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1200;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu.active {
+    transform: translateX(15%);
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin: 3px 0;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    font-size: 13px;
+  }
+
+  .mobile-nav-item:hover {
+    background: #e31837;
+    color: white;
+    transform: translateX(5px);
+  }
+
+  .nav-icon {
+    margin-right: 8px;
+    width: 14px;
+    font-size: 14px;
+  }
+
+  .mobile-auth-buttons {
+    margin-top: 15px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+  }
+
+  .mobile-auth-buttons button {
+    width: 100%;
+    padding: 6px;
+    font-size: 13px;
+    margin: 2px 0;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+} 
