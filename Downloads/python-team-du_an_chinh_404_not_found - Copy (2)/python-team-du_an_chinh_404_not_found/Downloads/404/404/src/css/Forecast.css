@@ -1,0 +1,296 @@
+.forecast-page {
+    padding: 40px;
+    margin-top: 100px;
+
+  }
+  
+  .forecast-form {
+    margin-bottom: 80px;
+  }
+  
+  .forecast-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 800px;
+  }
+  
+  .forecast-form input, .forecast-form select, .forecast-form button {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .forecast-form button {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 15px;
+    transition: var(--transition-smooth);
+  }
+  
+  .forecast-form button:hover {
+    background-color: #c41230;
+  }
+  
+  .forecast-chart {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow-elevation);
+    transition: var(--transition-smooth);
+  }
+  
+  .forecast-chart:hover {
+    transform: translateY(-5px);
+  }
+  
+  .chart-container {
+    height: 600px;
+  }
+  
+  @media (max-width: 768px) {
+    .forecast-page {
+      padding: 10px;
+      margin-top: 50px;
+    }
+  
+    .forecast-form form {
+      max-width: 100%;
+    }
+  
+    .forecast-form input, 
+    .forecast-form select, 
+    .forecast-form button {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    h2 {
+      font-size: 16px;
+    }
+  
+    .chart-container {
+      height: 300px;
+    }
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .confirm-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+  }
+  
+  .confirm-section p {
+    margin: 0;
+    color: #666;
+  }
+  
+  .confirm-btn {
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #45a049;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .budget-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  .analyze-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .analyze-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .budget-form {
+    margin-top: 20px;
+  }
+  
+  .template-selection {
+    margin: 20px 0;
+  }
+  
+  .custom-ratios {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .custom-ratios input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .calculate-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .calculate-btn:hover {
+    background-color: #1976D2;
+  }
+  
+  .budget-result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+  }
+  
+  .savings-evaluation {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e3f2fd;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .ratio-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .ratio-input-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .ratio-total {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .error-message {
+    color: #e31837;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .warning-message {
+    color: #f39c12;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .auto-calculated {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+  }
+  
+  .auto-fill-note {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+  }
+  
+  .ratio-total {
+    margin-top: 15px;
+  }
+  
+  .ratio-total p {
+    margin: 5px 0;
+  }
+  
+  .ai-predictions {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  .pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .pattern-item {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .category-forecast {
+    padding: 15px;
+    margin: 10px 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .ai-forecast {
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .pattern-grid {
+      grid-template-columns: 1fr;
+    }
+  }

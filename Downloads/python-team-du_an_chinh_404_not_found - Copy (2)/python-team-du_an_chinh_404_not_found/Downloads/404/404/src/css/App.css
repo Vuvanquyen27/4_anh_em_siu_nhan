@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Thêm pseudo-element mới */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-image: url('../assets/images/backgound1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  background: rgba(248, 249, 250, 0.4);
+}
+
+/* Thêm background overlay */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(26, 115, 232, 0.05), rgba(52, 168, 83, 0.05));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -1;
+}
+
+.main-content {
+  margin-left: 280px;
+  padding: 30px;
+  width: calc(100% - 280px);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  flex: 1;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+/* Thêm animation cho gradient */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 8px;
+    margin-top: 45px; /* Theo navbar height mới */
+    margin-bottom: 45px;
+    min-height: calc(100vh - 140px); /* Điều chỉnh chiều cao */
+    overflow-x: hidden;
+  }
+
+  .app::before {
+    background-attachment: scroll;
+  }
+
+  .app {
+    padding-bottom: env(safe-area-inset-bottom); /* Hỗ trợ iPhone có notch */
+  }
+
+  body {
+    font-size: 12px;
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-elevation);
+}
+
+button {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevation);
+}
+
+/* Thêm các biến CSS toàn cục */
+:root {
+  --primary: #e31837;
+  --primary-light: #ff4d6a;
+  --primary-dark: #c41230;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --background: #f8f9fa;
+  --surface: #ffffff;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+  --gradient-primary: linear-gradient(135deg, #1a73e8, #34a853);
+  --gradient-secondary: linear-gradient(135deg, #e31837, #ff6b6b);
+  --shadow-elevation: 0 8px 25px rgba(0,0,0,0.15);
+  --transition-smooth: all 0.3s ease;
+  --gradient-bg: linear-gradient(135deg, rgba(26, 115, 232, 0.1), rgba(52, 168, 83, 0.1));
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-blur: blur(10px);
+}

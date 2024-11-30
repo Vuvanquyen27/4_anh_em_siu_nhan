@@ -1,0 +1,119 @@
+.user-account-page {
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logout-btn {
+  padding: 12px 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.info-display {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-group {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+}
+
+.info-group label {
+  font-weight: 500;
+  min-width: 180px;
+  font-size: 14px;
+}
+
+.edit-btn, .save-btn {
+  background-color: #e31837;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .user-account-page {
+    padding: 10px;
+  }
+
+  .info-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .info-group label {
+    min-width: auto;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .cancel-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+} 

@@ -1,0 +1,79 @@
+.transaction-page {
+    padding: 20px;
+  }
+  
+  .create-transaction, .transaction-history {
+    margin-bottom: 30px;
+  }
+  
+  .create-transaction form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
+  }
+  
+  .create-transaction input, .create-transaction select, .create-transaction button {
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 24px;
+  }
+  
+  .create-transaction button {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+  }
+  
+  .create-transaction button:hover {
+    background: var(--gradient-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevation);
+  }
+  
+  .transaction-history table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .transaction-history th, .transaction-history td {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: left;
+    font-size: 22px;
+  }
+  
+  .transaction-history th {
+    background: var(--gradient-primary);
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .transaction-page {
+      padding: 10px;
+    }
+  
+    .create-transaction form {
+      max-width: 100%;
+    }
+  
+    .transaction-history {
+      overflow-x: auto;
+    }
+  }
+  
+  h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
